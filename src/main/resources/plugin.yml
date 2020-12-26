@@ -1,0 +1,30 @@
+name: Dcore
+version: ${project.version}
+main: me.dismadical.dcore.Dcore
+authors: [Dismadical]
+description: DCore Plugin
+commands:
+  Heal:
+    description: Heal Yourself.
+  Feed:
+    description: Feed Yourself.
+  Gmc:
+    description: Creative mode.
+  Gms:
+    description: Survival mode.
+  Fly:
+    description: Fly mode.
+  Sp:
+    description: Speed.
+  Fr:
+    description: Fire Resistance.
+  Message:
+    description: Message a player.
+  Invis:
+    description: Invisibility.
+  Kill:
+    description: Kill.
+  Craft:
+    description: Craft.
+  Effects:
+    description: Get different effects.
