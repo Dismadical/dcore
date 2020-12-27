@@ -5,12 +5,18 @@ import me.dismadical.dcore.commands.*;
 import me.dismadical.dcore.events.EffectsEvent;
 import me.dismadical.dcore.events.PlayerJoin;
 import me.dismadical.dcore.events.PlayerLeave;
+import me.dismadical.dcore.events.VanishJoinEvent;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.util.ArrayList;
 
 @Getter
 public final class Dcore extends JavaPlugin {
     @Getter
     private static Dcore instance;
+
+    public ArrayList<Player> invisible_list = new ArrayList<>();
 
     @Override
     public void onEnable() {
@@ -23,6 +29,7 @@ public final class Dcore extends JavaPlugin {
         // Events
         getServer().getPluginManager().registerEvents(new PlayerLeave(), this);
         getServer().getPluginManager().registerEvents(new PlayerJoin(), this);
+        getServer().getPluginManager().registerEvents(new VanishJoinEvent(this), this);
         getServer().getPluginManager().registerEvents(new EffectsEvent(), this);
         // Commands
         getCommand("feed").setExecutor(new FeedCommand());
@@ -37,6 +44,8 @@ public final class Dcore extends JavaPlugin {
         getCommand("kill").setExecutor(new KillCommand());
         getCommand("craft").setExecutor(new CraftCommand());
         getCommand("effects").setExecutor(new EffectsGui());
+        getCommand("v").setExecutor(new VanishCommand(this));
+        getCommand("vanish").setExecutor(new VanishCommand(this));
 
 
 

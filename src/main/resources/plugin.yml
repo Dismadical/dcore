@@ -28,3 +28,7 @@ commands:
     description: Craft.
   Effects:
     description: Get different effects.
+  Vanish:
+    description: Vanish from all players.
+  V:
+    description: Vanish from all players.
